@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Layout from '../components/Layout';
+import Layout from "../components/Layout";
 
-import { Link } from 'gatsby';
-import Sidebar from '../components/Sidebar';
-import config from '../../config';
+import { Link } from "gatsby";
+import Sidebar from "../components/Sidebar";
+import config from "../../config";
 const IndexPage = () => (
   <Layout>
     <Sidebar />
@@ -15,12 +15,14 @@ const IndexPage = () => (
       >
         <div className="w-100">
           <h1 className="mb-0">
-            {config.firstName}
+            {config.firstName}{" "}
             <span className="text-primary">{config.lastName}</span>
           </h1>
           <div className="subheading mb-5">
             {config.address} · {config.phone} ·
-            <a href={`mailto:${config.email}`}>{config.email}</a>
+            <a target="_blank" href={`mailto:${config.email}`}>
+              {config.email}
+            </a>
           </div>
           <p className="lead mb-5">
             I am experienced in leveraging agile frameworks to provide a robust
@@ -32,7 +34,7 @@ const IndexPage = () => (
             {config.socialLinks.map(social => {
               const { icon, url } = social;
               return (
-                <a key={url} href={url}>
+                <a key={url} href={url} target="_blank">
                   <i className={`fab ${icon}`}></i>
                 </a>
               );

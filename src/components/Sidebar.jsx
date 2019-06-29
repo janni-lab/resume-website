@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Scrollspy from "react-scrollspy";
 import Scroll from "./Scroll";
 
-import avatar from "../assets/images/avatar.png";
 import config from "../../config";
 
 export class Sidebar extends Component {
@@ -10,12 +9,12 @@ export class Sidebar extends Component {
     super(props);
     this.state = {
       tabs: [
-        { content: "About", href: "about" },
-        { content: "Experience", href: "experience" },
-        { content: "Education", href: "education" },
-        { content: "Skills", href: "skills" },
-        { content: "Interests", href: "interests" },
-        { content: "Awards", href: "awards" }
+        { label: "Profile", href: "Profile" },
+        { label: "Experience", href: "experience" },
+        { label: "Education", href: "education" },
+        { label: "Skills", href: "skills" },
+        { label: "Interests", href: "interests" },
+        { label: "Awards", href: "awards" }
       ]
     };
   }
@@ -24,7 +23,7 @@ export class Sidebar extends Component {
     const { tabs } = this.state;
     return (
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top"
+        className="navbar navbar-expand-lg navbar-light fixed-top"
         id="sideNav"
       >
         <a className="navbar-brand" href="#page-top">
@@ -32,11 +31,7 @@ export class Sidebar extends Component {
             {config.firstName} {config.lastName}
           </span>
           <span className="d-none d-lg-block">
-            <img
-              className="img-fluid img-profile rounded-circle mx-auto mb-2"
-              src={avatar}
-              alt=""
-            />
+            <h3>{config.firstName}</h3>
           </span>
         </a>
         <button
@@ -50,7 +45,14 @@ export class Sidebar extends Component {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className="collapse navbar-collapse bg-secondary"
+          id="navbarSupportedContent"
+          style={{
+            padding: "0 20px"
+          }}
+        >
+          <h3 className="text-primary">{config.lastName}</h3>
           <Scrollspy
             items={tabs.map(s => s.href)}
             currentClassName="active"
@@ -58,12 +60,12 @@ export class Sidebar extends Component {
             className="navbar-nav"
           >
             {tabs.map((tab, i) => {
-              const { href, content } = tab;
+              const { href, label } = tab;
               return (
                 <li className="nav-item" key={href}>
                   <Scroll type="id" element={href}>
                     <a className="nav-link" href={`#${href}`}>
-                      {content}
+                      {label}
                     </a>
                   </Scroll>
                 </li>

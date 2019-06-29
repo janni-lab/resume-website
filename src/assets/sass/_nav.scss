@@ -12,6 +12,9 @@
 }
 
 @media (min-width: 992px) {
+  .navbar {
+    padding: 0;
+  }
   #sideNav {
     text-align: center;
     position: fixed;
@@ -26,8 +29,8 @@
     .navbar-brand {
       display: flex;
 
-      margin: auto auto 0;
-      padding: 0.5rem;
+      margin: 100px 0 0;
+      padding: 0;
       .img-profile {
         max-width: 10rem;
         max-height: 10rem;
@@ -37,16 +40,32 @@
     .navbar-collapse {
       display: flex;
       align-items: flex-start;
-      flex-grow: 0;
+      flex-grow: 1;
+      flex-direction: column;
 
       width: 100%;
       margin-bottom: auto;
       .navbar-nav {
+        margin-top: 50px;
         flex-direction: column;
 
         width: 100%;
         .nav-item {
           display: block;
+          font-family: Montserrat SemiBold;
+          font-style: normal;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-bottom: 2rem;
+          text-align: left;
+          border-top: none;
+          border-bottom: none;
+          color: $gray-600;
+          &.active {
+            color: $dark !important;
+            border-top: 2px solid $dark;
+            border-bottom: 2px solid $dark;
+          }
           .nav-link {
             display: block;
           }

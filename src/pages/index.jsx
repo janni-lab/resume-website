@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 
 import Sidebar from "../components/Sidebar";
 
-import Profile from "../components/Profile";
+import AboutMe from "../components/AboutMe";
 import Experience from "../components/Experience";
 
 const IndexPage = () => (
@@ -14,7 +14,7 @@ const IndexPage = () => (
     <Layout>
       <Sidebar />
       <div className="container-fluid p-0">
-        <Profile />
+        <AboutMe />
         <hr className="m-0" />
         <Experience />
         <hr className="m-0" />

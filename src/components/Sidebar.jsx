@@ -9,7 +9,7 @@ export class Sidebar extends Component {
     super(props);
     this.state = {
       tabs: [
-        { label: "Profile", href: "Profile" },
+        { label: "About Me", href: "about-me" },
         { label: "Experience", href: "experience" },
         { label: "Education", href: "education" },
         { label: "Skills", href: "skills" },

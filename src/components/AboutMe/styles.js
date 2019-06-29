@@ -7,6 +7,11 @@ export const Center = styled.div`
   align-items: center;
 `;
 
+export const Narrow = styled.div`
+  width: 70%;
+  margin: auto;
+`;
+
 export const List = styled.div`
   width: 100%;
   display: flex;

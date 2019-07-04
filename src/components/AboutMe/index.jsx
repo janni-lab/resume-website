@@ -12,7 +12,6 @@ import {
   ListItemBody,
   ListItemTitle
 } from "./styles";
-import HeroImage from "./vectors/HeroImage";
 import Address from "./vectors/Address";
 import Phone from "./vectors/Phone";
 import Email from "./vectors/Email";
@@ -24,10 +23,7 @@ const AboutMe = () => {
       id="about-me"
     >
       <div className="w-100">
-        <Center style={{ height: "90vh" }}>
-          <HeroImage width="400" height="400" />
-        </Center>
-        <Space height={30} />
+        <SectionTitle>About Me</SectionTitle>
         <Narrow>
           <p className="lead mb-5">
             Seeking an entry-level engineering position that allows for creative

@@ -2,11 +2,15 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import theme from "../styles/theme.js";
 
+import Space from "../components/shared/Space.js";
 import Layout from "../components/Layout";
 
 import Sidebar from "../components/Sidebar";
 
 import AboutMe from "../components/AboutMe";
+import HeroImage from "../components/AboutMe/vectors/HeroImage";
+import { Center } from "../components/AboutMe/styles";
+
 import Experience from "../components/Experience";
 
 const IndexPage = () => (
@@ -14,6 +18,19 @@ const IndexPage = () => (
     <Layout>
       <Sidebar />
       <div className="container-fluid p-0">
+        <div className="w-100">
+          <Center
+            style={{
+              flexDirection: "column",
+              position: "relative",
+              height: "100vh"
+            }}
+          >
+            <HeroImage width="400" height="400" />
+            <Space height={70} />
+            <h1 style={{ textTransform: "none" }}>Hi, I'm Jan.</h1>
+          </Center>
+        </div>
         <AboutMe />
         <hr className="m-0" />
         <Experience />
